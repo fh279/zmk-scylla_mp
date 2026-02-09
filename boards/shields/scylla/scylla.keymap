@@ -13,7 +13,7 @@
                 &kp LSHIFT    &kp A       &kp S       &kp D       &kp F       &kp G       &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp SINGLE_QUOTE 
                 &kp LCTRL     &kp Z       &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp SLASH   &kp RSHIFT
                                   &kp LCMD   &kp SPACE        &mo 1   &mo 2       &none     &kp ENTER 
-                                              &kp LALT      &kp DEL   &kp BSPC    &none
+                                              &kp LALT      &kp DEL   &kp BSPC    &studio_unlock
             >;
         };
 
