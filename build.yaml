@@ -5,7 +5,7 @@ include:
     snippet: studio-rpc-usb-uart  # Только слева!
     cmake-args:
       - -DCONFIG_ZMK_SPLIT=y
-      - -DCONFIG_BT=y
+      - -DCONFIG_ZMK_WIRELESS=y
       - -DCONFIG_ZMK_STUDIO_LOCKING=n
       - -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
       - -DCONFIG_BT_CTLR_PHY_2M=n    # Отключить 2Mbps PHY (Mac issue)
@@ -15,10 +15,12 @@ include:
   # Правая (Peripheral) - ЧИСТЫЙ Bluetooth!
   - board: nice_nano
     shield: scylla_right
-    cmake-args:  # Без snippet!
+    snippet: studio-rpc-usb-uart  # Добавлен для поддержки RPC
+    cmake-args:
       - -DCONFIG_ZMK_SPLIT=y
-      - -DCONFIG_BT=y
-      - -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+      - -DCONFIG_ZMK_WIRELESS=y
+      - -DCONFIG_BT_CTLR_PHY_2M=n    # Согласованная настройка с левой половиной
+      - -DCONFIG_ZMK_BLE_PASSKEY_ENTRY=y  # Согласованная настройка безопасности
     artifact-name: keyboard_right
 
   # Reset
