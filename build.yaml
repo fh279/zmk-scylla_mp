@@ -1,25 +1,25 @@
 include:
-  # Left Split (Central) With Bluetooth - Enable Studio RPC/Unlocking
+  # Левая (Central) - Studio RPC только здесь!
   - board: nice_nano
     shield: scylla_left
-    snippet: studio-rpc-usb-uart
+    snippet: studio-rpc-usb-uart  # Только слева!
     cmake-args:
       - -DCONFIG_ZMK_SPLIT=y
-      - -DCONFIG_ZMK_WIRELESS=y
+      - -DCONFIG_BT=y
       - -DCONFIG_ZMK_STUDIO_LOCKING=n
-      - -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y  # Explicit central for split
+      - -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
     artifact-name: keyboard_left
 
-  # Right Split (Peripheral) With Bluetooth - Studio RPC needed for full Studio support
+  # Правая (Peripheral) - ЧИСТЫЙ Bluetooth!
   - board: nice_nano
     shield: scylla_right
-    snippet: studio-rpc-usb-uart  # Added for Studio RPC support
-    cmake-args:
+    cmake-args:  # Без snippet!
       - -DCONFIG_ZMK_SPLIT=y
-      - -DCONFIG_ZMK_WIRELESS=y  # Explicit Bluetooth enable
+      - -DCONFIG_BT=y
+      - -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: keyboard_right
 
-  # Reset both splits with this firmware before flashing.
+  # Reset
   - board: nice_nano
     shield: settings_reset
     artifact-name: keyboard_reset
