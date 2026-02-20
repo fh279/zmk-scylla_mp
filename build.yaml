@@ -8,6 +8,8 @@ include:
       - -DCONFIG_BT=y
       - -DCONFIG_ZMK_STUDIO_LOCKING=n
       - -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
+      - -DCONFIG_BT_CTLR_PHY_2M=n    # Отключить 2Mbps PHY (Mac issue)
+      - -DCONFIG_ZMK_BLE_PASSKEY_ENTRY=y  # Passkey для Mac
     artifact-name: keyboard_left
 
   # Правая (Peripheral) - ЧИСТЫЙ Bluetooth!
